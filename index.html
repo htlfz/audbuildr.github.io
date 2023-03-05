@@ -11,7 +11,7 @@
   </style>
   <body>
      <button id="sv-btn">Save</button>
-     <textarea value="test" id="in" placeholder="Put HTML Text Here!"></textarea>
+     <textarea id="in" placeholder="Put HTML Text Here!"></textarea>
      <script type="text/javascript">
        const sbtn = document.getElementById("sv-btn");
        sbtn.addEventListener('click' save);
@@ -21,7 +21,7 @@
          localStorage.setItem("cd", code);
        }
        function load(){
-         localStorage.getItem("cd") = code.value;
+         code.value.innerHTML = localStorage.getItem("cd");
        }
        window.onload = load();
      </script> 
