@@ -12,8 +12,18 @@
   <body>
      <button id="sv-btn">Save</button>
      <textarea id="in" placeholder="Put HTML Text Here!"></textarea>
-     <script src="add.py">
-      
-    </script> 
+     <script type="text/javascript">
+       const sbtn = document.getElementById("sv-btn");
+       sbtn.addEventListener('click' save);
+       const code = document.getElementById("in");
+       
+       function save(){
+         localStorage.setItem("cd", code);
+       }
+       function load(){
+         localStorage.getItem("cd");
+       }
+       window.onload = load();
+     </script> 
   </body>
 </html>
