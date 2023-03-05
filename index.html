@@ -11,13 +11,15 @@
   </style>
   <body onload="load()">
      <button onclick="save()" id="sv-btn">Save</button>
-     <textarea id="in" placeholder="Put HTML Text Here!"></textarea>
+    <textarea id="in" placeholder="Put HTML Text Here!"><div id="code"></div></textarea>
      <script type="text/javascript">
+       var code = document.getElementById("code");
        function save(){
          localStorage.setItem("cd", document.getElementById("in").value.innerHTML);
        }
        function load(){
          document.getElementById("in").value.innerHTML = localStorage.getItem("cd");
+         code.innerHTML = document.getElementById("in").value.innerHTML;
        }
        window.onload = load();
      </script> 
