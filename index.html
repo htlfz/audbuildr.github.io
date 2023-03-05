@@ -15,7 +15,7 @@
      <script type="text/javascript">
        const sbtn = document.getElementById("sv-btn");
        sbtn.addEventListener('click' save);
-       const code = document.getElementById("in");
+       const code = document.getElementById("in").value;
        
        function save(){
          localStorage.setItem("cd", code);
