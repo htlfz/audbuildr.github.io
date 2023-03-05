@@ -13,15 +13,23 @@
      <button onclick="save()" id="sv-btn">Save</button>
     <textarea id="in" placeholder="Put HTML Text Here!"><div id="code"></div></textarea>
      <script type="text/javascript">
-       var code = document.getElementById("code");
-       function save(){
-         localStorage.setItem("cd", document.getElementById("in").value.innerHTML);
-       }
-       function load(){
-         document.getElementById("in").value.innerHTML = localStorage.getItem("cd");
-         code.innerHTML = document.getElementById("in").value.innerHTML;
-       }
-       window.onload = load();
+       
+//check if "user" is in localStorage
+
+if (localStorage["in"])
+{
+    var user = localStorage["in"] ;
+    document.getElementById("in").value = user ;
+    alert("you are already a user")
+}
+//save entered gmail address
+document.getElementById("save").addEventListener("click", function ()
+    {
+        var user = document.getElementById("in").value ;
+        //localStorage["user"] = user ;
+        localStorage.setItem("user", user) ;
+        alert("gmail id saved")
+    } , false);
      </script> 
   </body>
 </html>
