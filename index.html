@@ -14,7 +14,7 @@
      <textarea id="in" placeholder="Put HTML Text Here!"></textarea>
      <script type="text/javascript">
        function save(){
-         document.getElementById("in").value.innerHTML = localStorage.setItem("cd", code);
+         localStorage.setItem("cd", document.getElementById("in").value.innerHTML);
        }
        function load(){
          document.getElementById("in").value.innerHTML = localStorage.getItem("cd");
